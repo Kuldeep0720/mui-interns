@@ -636,7 +636,6 @@ const Crumbs = () => {
 
           <Grid container spacing={2}>
             <Grid item xs={6}>
-
               <Card variant="outlined">
                 <CardContent>
                   <Typography variant="h6" gutterBottom>
@@ -1469,8 +1468,9 @@ const Crumbs = () => {
                       </Button>
                     </form>
                   </List>
-</Card>
-</CardContent>
+                </CardContent>
+              </Card>
+
               <Card sx={{ minWidth: 275 }}>
                 <CardContent>
                   <Typography variant="h5" sx={{ lineHeight: "2" }}>
@@ -1629,14 +1629,12 @@ const Crumbs = () => {
                       </Stack>
                     </form>
                   </Stack>
-
                 </CardContent>
               </Card>
             </Grid>
 
             {/* Buttons Part */}
             <Grid item xs={6} spacing={2}>
-
               <ThemeProvider theme={theme1}>
                 <Card variant="outlined" sx={{ mb: "10px" }}>
                   <CardContent>
@@ -1730,8 +1728,8 @@ const Crumbs = () => {
                       secondary text button
                     </Typography>
                   </Stack>
-</Card>
-</ThemeProvider>
+                </Card>
+              </ThemeProvider>
               <ThemeProvider theme={theme}>
                 <Card sx={{ minWidth: 275 }}>
                   <CardContent>
@@ -1858,7 +1856,6 @@ const Crumbs = () => {
                       </div>
                     </Typography>
                   </CardContent>
-
                 </Card>
               </ThemeProvider>
             </Grid>
