@@ -147,10 +147,300 @@ const Crumbs = () => {
           </Typography>
 
           <Grid container spacing={2}>
-            <Grid item xs={6}></Grid>
+            <Grid item xs={6}>
+              <Card sx={{ minWidth: 275 }}>
+                <CardContent>
+                  <Typography variant="h5" sx={{ lineHeight: "2" }}>
+                    Color Palette
+                  </Typography>
+                  <Divider />
+                  <Stack spacing={2} sx={{ pt: "15px", pb: "15px" }}>
+                    <form onSubmit={handleSubmit}>
+                      <FormControl sx={{ m: 1, minWidth: 120 }}>
+                        <InputLabel htmlFor="primaryColor">Primary</InputLabel>
+                        <Select
+                          native
+                          id="primaryColor"
+                          label="Primary"
+                          value={defaultprimaryColor}
+                          onChange={handlePrimary}
+                        >
+                          <option aria-label="None" value="" />
+                          {Object.entries(Color).map((obj, j) => (
+                            <optgroup label={obj[0]}>
+                              {Object.entries(obj[1]).map((ent, i) => (
+                                <option
+                                  value={ent[1]}
+                                >{`${obj[0]}[${ent[0]}]`}</option>
+                              ))}
+                            </optgroup>
+                          ))}
+                        </Select>
+                        {console.log(Object.entries(Color))}
+                      </FormControl>
+                      <FormControl sx={{ m: 1, minWidth: 120 }}>
+                        <InputLabel htmlFor="secondaryColor">Error</InputLabel>
+                        <Select
+                          native
+                          defaultValue=""
+                          id="secondaryColor"
+                          label="Secondary"
+                          value={defaultsecondaryColor}
+                          onChange={handleSecondary}
+                        >
+                          <option aria-label="None" value="" />
+                          {Object.entries(Color).map((obj, j) => (
+                            <optgroup label={obj[0]}>
+                              {Object.entries(obj[1]).map((ent, i) => (
+                                <option
+                                  value={ent[1]}
+                                >{`${obj[0]}[${ent[0]}]`}</option>
+                              ))}
+                            </optgroup>
+                          ))}
+                        </Select>
+                        {console.log(Object.entries(Color))}
+                      </FormControl>
+                      <FormControl sx={{ m: 1, minWidth: 120 }}>
+                        <InputLabel htmlFor="errorColor">Error</InputLabel>
+                        <Select
+                          native
+                          defaultValue=""
+                          id="errorcolor"
+                          label="Error"
+                          value={defaulterrorColor}
+                          onChange={handleError}
+                        >
+                          <option aria-label="None" value="" />
+                          {Object.entries(Color).map((obj, j) => (
+                            <optgroup label={obj[0]}>
+                              {Object.entries(obj[1]).map((ent, i) => (
+                                <option
+                                  value={ent[1]}
+                                >{`${obj[0]}[${ent[0]}]`}</option>
+                              ))}
+                            </optgroup>
+                          ))}
+                        </Select>
+                        {console.log(Object.entries(Color))}
+                      </FormControl>
+                      <FormControl sx={{ m: 1, minWidth: 120 }}>
+                        <InputLabel htmlFor="warningcolor">Warning</InputLabel>
+                        <Select
+                          native
+                          id="warningColor"
+                          label="Warning"
+                          value={defaultwarningColor}
+                          onChange={handleWarning}
+                        >
+                          <option aria-label="None" value="" />
+                          {Object.entries(Color).map((obj, j) => (
+                            <optgroup label={obj[0]}>
+                              {Object.entries(obj[1]).map((ent, i) => (
+                                <option
+                                  value={ent[1]}
+                                >{`${obj[0]}[${ent[0]}]`}</option>
+                              ))}
+                            </optgroup>
+                          ))}
+                        </Select>
+                        {console.log(Object.entries(Color))}
+                      </FormControl>
+                      <FormControl sx={{ m: 1, minWidth: 120 }}>
+                        <InputLabel htmlFor="infoColor">Info</InputLabel>
+                        <Select
+                          native
+                          id="infoColor"
+                          label="Info"
+                          value={defaultinfoColor}
+                          onChange={handleInfo}
+                        >
+                          <option aria-label="None" value="" />
+                          {Object.entries(Color).map((obj, j) => (
+                            <optgroup label={obj[0]}>
+                              {Object.entries(obj[1]).map((ent, i) => (
+                                <option
+                                  value={ent[1]}
+                                >{`${obj[0]}[${ent[0]}]`}</option>
+                              ))}
+                            </optgroup>
+                          ))}
+                        </Select>
+                        {console.log(Object.entries(Color))}
+                      </FormControl>
+                      <FormControl sx={{ m: 1, minWidth: 120 }}>
+                        <InputLabel htmlFor="successColor">Success</InputLabel>
+                        <Select
+                          native
+                          id="successColor"
+                          label="Success"
+                          value={defaultsuccessColor}
+                          onChange={handleSuccess}
+                        >
+                          <option aria-label="None" value="" />
+                          {Object.entries(Color).map((obj, j) => (
+                            <optgroup label={obj[0]}>
+                              {Object.entries(obj[1]).map((ent, i) => (
+                                <option
+                                  value={ent[1]}
+                                >{`${obj[0]}[${ent[0]}]`}</option>
+                              ))}
+                            </optgroup>
+                          ))}
+                        </Select>
+                        {console.log(Object.entries(Color))}
+                      </FormControl>
+                      <Divider />
+
+                      <Stack direction="row" spacing={1} sx={{ pt: "10px" }}>
+                        <Button variant="text" type="submit">
+                          SAVE
+                        </Button>
+                        <Button
+                          variant="text"
+                          color="secondary"
+                          onClick={handleReset}
+                        >
+                          RESET
+                        </Button>
+                      </Stack>
+                    </form>
+                  </Stack>
+                </CardContent>
+              </Card>
+            </Grid>
 
             {/* Buttons Part */}
-            <Grid item xs={6} spacing={2}></Grid>
+            <Grid item xs={6} spacing={2}>
+              <ThemeProvider theme={theme}>
+                <Card sx={{ minWidth: 275 }}>
+                  <CardContent>
+                    <Typography variant="h5" sx={{ lineHeight: "2" }}>
+                      Demo
+                    </Typography>
+                    <Divider />
+                    <Typography variant="h4" sx={{ lineHeight: "2" }}>
+                      Buttons
+                    </Typography>
+                    <Stack direction="row" spacing={3}>
+                      <Button variant="text">Contained</Button>
+                      <Button variant="text">Outlined</Button>
+                      <Button variant="text">Text</Button>
+                    </Stack>
+
+                    <Typography variant="div" sx={{ "& button": { m: 1 } }}>
+                      <div spacing={2} direction="row">
+                        <Button variant="contained" size="large">
+                          Large
+                        </Button>
+
+                        <Button variant="outlined" size="medium">
+                          Medium
+                        </Button>
+
+                        <Button variant="outlined" size="small">
+                          Small
+                        </Button>
+                      </div>
+
+                      <div spacing={2} direction="row">
+                        <Button
+                          variant="contained"
+                          size="large"
+                          color="secondary"
+                        >
+                          Large
+                        </Button>
+
+                        <Button
+                          variant="outlined"
+                          size="medium"
+                          color="secondary"
+                        >
+                          Medium
+                        </Button>
+
+                        <Button
+                          variant="outlined"
+                          size="small"
+                          color="secondary"
+                        >
+                          Small
+                        </Button>
+                      </div>
+                      <div spacing={2} direction="row">
+                        <Button variant="contained" size="large" color="error">
+                          Large
+                        </Button>
+
+                        <Button variant="outlined" size="medium" color="error">
+                          Medium
+                        </Button>
+
+                        <Button variant="outlined" size="small" color="error">
+                          Small
+                        </Button>
+                      </div>
+                      <div spacing={2} direction="row">
+                        <Button
+                          variant="contained"
+                          size="large"
+                          color="warning"
+                        >
+                          Large
+                        </Button>
+
+                        <Button
+                          variant="outlined"
+                          size="medium"
+                          color="warning"
+                        >
+                          Medium
+                        </Button>
+
+                        <Button variant="outlined" size="small" color="warning">
+                          Small
+                        </Button>
+                      </div>
+                      <div spacing={2} direction="row">
+                        <Button variant="contained" size="large">
+                          Large
+                        </Button>
+
+                        <Button variant="outlined" size="medium">
+                          Medium
+                        </Button>
+
+                        <Button variant="outlined" size="small">
+                          Small
+                        </Button>
+                      </div>
+                      <div spacing={2} direction="row">
+                        <Button
+                          variant="contained"
+                          size="large"
+                          color="success"
+                        >
+                          Large
+                        </Button>
+
+                        <Button
+                          variant="outlined"
+                          size="medium"
+                          color="success"
+                        >
+                          Medium
+                        </Button>
+
+                        <Button variant="outlined" size="small" color="success">
+                          Small
+                        </Button>
+                      </div>
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </ThemeProvider>
+            </Grid>
           </Grid>
         </Box>
       </Container>
