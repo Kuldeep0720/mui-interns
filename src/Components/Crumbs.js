@@ -26,7 +26,6 @@ import Link from "@mui/material/Link";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import Button from "@mui/material/Button";
 import * as Color from "@mui/material/colors";
-import { styled } from "@mui/material/styles";
 
 function handleClick(event) {
   event.preventDefault();
